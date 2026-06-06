@@ -127,8 +127,15 @@ nav.scrolled {
 .nav-logo:hover {
     transform: scale(1.03);
 }
-.logo-icon {
-    font-size: 28px;
+.nav-logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+.nav-logo:hover .nav-logo-img {
+    transform: scale(1.1) rotate(-5deg);
 }
 .nav-links {
     display: flex;
@@ -267,6 +274,23 @@ nav.scrolled {
     max-width: 800px;
     text-align: center;
 }
+/* Hero Logo */
+.hero-logo {
+    margin-bottom: 32px;
+    animation: fadeInUp 0.8s ease-out;
+}
+.hero-logo-img {
+    width: 220px;
+    max-width: 60%;
+    height: auto;
+    border-radius: 16px;
+    filter: drop-shadow(0 10px 40px rgba(239, 68, 68, 0.3));
+    transition: transform 0.4s, filter 0.4s;
+}
+.hero-logo-img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 15px 50px rgba(239, 68, 68, 0.5));
+}
 .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -281,7 +305,7 @@ nav.scrolled {
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 32px;
-    animation: fadeInUp 0.8s ease-out;
+    animation: fadeInUp 0.8s ease-out 0.05s both;
 }
 .badge-dot {
     width: 8px;
@@ -468,7 +492,7 @@ nav.scrolled {
 .section-desc {
     font-size: 16px;
     color: var(--text-muted);
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
 }
 /* ========== FEATURES ========== */
@@ -597,7 +621,39 @@ nav.scrolled {
     font-family: 'Outfit', sans-serif;
     font-size: 24px;
     font-weight: 700;
+    margin-bottom: 8px;
+}
+.server-mode {
+    font-size: 14px;
+    color: var(--text-muted);
     margin-bottom: 20px;
+    font-weight: 500;
+}
+.server-details {
+    margin-bottom: 24px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+.detail-row:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+}
+.detail-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+.detail-value {
+    font-size: 14px;
+    color: var(--text-primary);
+    font-weight: 600;
 }
 .server-ip {
     margin-bottom: 24px;
@@ -673,7 +729,7 @@ nav.scrolled {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 .rule-item {
@@ -777,6 +833,13 @@ footer {
     gap: 40px;
     padding: 60px 0 40px;
 }
+.footer-logo-img {
+    width: 80px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 4px 12px rgba(239, 68, 68, 0.2));
+}
 .footer-brand h3 {
     font-family: 'Outfit', sans-serif;
     font-size: 22px;
@@ -786,6 +849,7 @@ footer {
 .footer-brand p {
     font-size: 14px;
     color: var(--text-muted);
+    line-height: 1.7;
 }
 .footer-links h4 {
     font-family: 'Outfit', sans-serif;
