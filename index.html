@@ -3,374 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Türkiyem Mazi Gaming - Türkiye'nin En Kaliteli MTA Roleplay Deneyimi. Hemen sunucumuza katılın!">
-    <title>Türkiyem Mazi Gaming | MTA Roleplay</title>
-    <link rel="icon" type="image/png" href="mazi.png">
+    <title>Anadolu Gaming | MTA:SA Rol Yapma Sunucusu</title>
+    <meta name="description" content="Anadolu Gaming Multi Theft Auto (MTA:SA) sunucusu resmi web sitesi. Eğlenceli sistemler, yüksek FPS kalitesi ve kesintisiz topluluk deneyimi için aramıza katılın.">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="bg-effects">
-        <canvas id="particleCanvas"></canvas>
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
-        <!-- Logo Watermark Background -->
-        <div class="bg-logo-watermark">
-            <img src="mazi.png" alt="" class="watermark-img watermark-1">
-            <img src="mazi.png" alt="" class="watermark-img watermark-2">
-            <img src="mazi.png" alt="" class="watermark-img watermark-3">
-        </div>
-    </div>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <img src="mazi.png" alt="Logo" class="nav-logo-img">
-                <span class="logo-text">Türkiyem <span class="accent">Mazi</span></span>
+    <!-- Background overlay elements -->
+    <div class="bg-glow-orange"></div>
+    <div class="bg-glow-red"></div>
+    <!-- Navigation Bar -->
+    <header class="navbar-container">
+        <div class="navbar-wrapper">
+            <a href="#" class="logo-link" id="nav-logo">
+                <span class="logo-accent">ANADOLU</span> GAMING
             </a>
-            <ul class="nav-links">
-                <li><a href="#hero">Ana Sayfa</a></li>
-                <li><a href="#features">Özellikler</a></li>
-                <li><a href="#servers">Sunucu</a></li>
-                <li><a href="#rules">Kurallar</a></li>
-            </ul>
-            <a href="mtasa://212.134.162.197:22003" class="nav-btn">
-                <span class="btn-pulse"></span>
-                🎮 Hemen Katıl
-            </a>
-            <button class="hamburger" id="hamburger" aria-label="Menü">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <ul>
-            <li><a href="#hero" onclick="closeMobile()">Ana Sayfa</a></li>
-            <li><a href="#features" onclick="closeMobile()">Özellikler</a></li>
-            <li><a href="#servers" onclick="closeMobile()">Sunucu</a></li>
-            <li><a href="#rules" onclick="closeMobile()">Kurallar</a></li>
-            <li><a href="mtasa://212.134.162.197:22003" class="nav-btn mobile" onclick="closeMobile()">🎮 Hemen Katıl</a></li>
-        </ul>
-    </div>
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <div class="hero-logo">
-                <img src="mazi.png" alt="Türkiyem Mazi Gaming Logo" class="hero-logo-img">
-            </div>
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                ONLINE — 35+ Üye
-            </div>
-            <h1 class="hero-title">
-                <span class="line-1">Türkiyem Mazi</span>
-                <span class="line-2">Gaming</span>
-            </h1>
-            <p class="hero-subtitle">Türkiye'nin En Kaliteli <span class="accent">MTA Roleplay</span> Deneyimi</p>
-            <p class="hero-desc">San Andreas sokaklarında gerçekçi roleplay, profesyonel yönetim ve aktif topluluk sizi bekliyor. Fraksiyon sistemi, iş imkânları, araç tuning ve çok daha fazlası!</p>
-            <div class="hero-buttons">
-                <a href="mtasa://212.134.162.197:22003" class="btn btn-primary" id="joinServerBtn">
-                    <span class="btn-bg"></span>
-                    <span class="btn-content">🎮 Sunucuya Katıl</span>
-                </a>
-                <a href="https://multitheftauto.com/" target="_blank" class="btn btn-secondary" id="downloadMtaBtn">
-                    📥 MTA İndir
-                </a>
-                <a href="https://dosya.co/6w45s1y2l3g6/Gta_san_andreas_-_500_MB.rar.html" target="_blank" class="btn btn-secondary" id="downloadGtaBtn">
-                    🚗 GTA SA İndir
-                </a>
-                <button class="btn btn-discord" onclick="copyDiscord()" id="discordBtn">
-                    💬 Discord'a Katıl
+            <nav class="nav-links">
+                <a href="#hero" class="nav-item active"><i class="fa-solid fa-house"></i> Anasayfa</a>
+                <a href="#about" class="nav-item"><i class="fa-solid fa-circle-info"></i> Hakkımızda</a>
+                <a href="#stats" class="nav-item"><i class="fa-solid fa-server"></i> Sunucu Durumu</a>
+                <a href="#discord" class="nav-item"><i class="fa-solid fa-comments"></i> Topluluk</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn btn-primary btn-join" id="nav-btn-join">
+                    <i class="fa-solid fa-gamepad"></i> Hemen Oyna
                 </button>
             </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number" data-count="38">0</span>
-                    <span class="stat-label">Toplam Üye</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-number" data-count="24">0</span>
-                    <span class="stat-label">Saat Aktif</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat">
-                    <span class="stat-number" data-count="99">0</span>
-                    <span class="stat-label">Uptime %</span>
-                </div>
-            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Menüyü Aç">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
-    </section>
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-tag">Neden Biz?</span>
-                <h2 class="section-title">Eşsiz <span class="accent">Özellikler</span></h2>
-                <p class="section-desc">Türkiyem Mazi Gaming'de sizi bekleyen benzersiz sistemler ve deneyimler</p>
+    </header>
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="#hero" class="mobile-nav-item"><i class="fa-solid fa-house"></i> Anasayfa</a>
+        <a href="#about" class="mobile-nav-item"><i class="fa-solid fa-circle-info"></i> Hakkımızda</a>
+        <a href="#stats" class="mobile-nav-item"><i class="fa-solid fa-server"></i> Sunucu Durumu</a>
+        <a href="#discord" class="mobile-nav-item"><i class="fa-solid fa-comments"></i> Topluluk</a>
+        <button class="btn btn-primary w-full mt-4" id="mobile-btn-join">
+            <i class="fa-solid fa-gamepad"></i> Hemen Oyna
+        </button>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-content">
+            <div class="tagline-badge">
+                <span class="pulsing-dot"></span> Yeni Dönem Başladı
             </div>
-            <div class="features-grid">
-                <div class="feature-card" data-delay="0">
-                    <div class="feature-icon">🎭</div>
-                    <h3>Gelişmiş RP Sistemi</h3>
-                    <p>Karakter oluşturma, hikâye yazma ve detaylı roleplay mekanikleri ile San Andreas'ta kendi hayatınızı yaşayın. /me, /do, /try komutları ve daha fazlası.</p>
-                </div>
-                <div class="feature-card" data-delay="100">
-                    <div class="feature-icon">🏢</div>
-                    <h3>Fraksiyon Sistemi</h3>
-                    <p>LSPD, LSFD, EMS, Belediye ve özel fraksiyonlar! Polis olun suçluları yakalayın, itfaiyeci olun yangınları söndürün veya kendi çetenizi kurun.</p>
-                </div>
-                <div class="feature-card" data-delay="200">
-                    <div class="feature-icon">💰</div>
-                    <h3>Ekonomi & İş Sistemi</h3>
-                    <p>Balıkçılık, madencilik, TIR şoförlüğü, çiftçilik ve 20+ farklı meslek. Kendi işletmenizi açın, emlak alıp satın, borsada yatırım yapın.</p>
-                </div>
-                <div class="feature-card" data-delay="300">
-                    <div class="feature-icon">🚗</div>
-                    <h3>Araç & Tuning</h3>
-                    <p>300+ özel araç modeli, detaylı tuning sistemi, araç garajı ve showroom. Arabanızı kişiselleştirin, neon takın ve sokaklarda yarışın.</p>
-                </div>
-                <div class="feature-card" data-delay="400">
-                    <div class="feature-icon">🏠</div>
-                    <h3>Ev & Mülk Sistemi</h3>
-                    <p>Kendi evinizi satın alın, mobilya ile dekore edin. Dükkan, restoran veya gece kulübü işletmeciliği yaparak gelir elde edin.</p>
-                </div>
-                <div class="feature-card" data-delay="500">
-                    <div class="feature-icon">⚔️</div>
-                    <h3>Silah & Savaş Sistemi</h3>
-                    <p>Gerçekçi silah mekanikleri, bölge savaşları ve organize suç sistemi. Çete kurun, bölge ele geçirin ve rakiplerinize karşı savaşın.</p>
-                </div>
-                <div class="feature-card" data-delay="600">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Anti-Cheat Koruması</h3>
-                    <p>Gelişmiş anti-cheat ve anti-bug sistemi ile %100 adil bir oyun ortamı. Otomatik tespit, anlık ban ve 7/24 yetkili denetimi.</p>
-                </div>
-                <div class="feature-card" data-delay="700">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Event & Turnuvalar</h3>
-                    <p>Her hafta düzenlenen yarışlar, ödüllü turnuvalar, drift yarışları, hayatta kalma etkinlikleri ve topluluk festivalleri.</p>
-                </div>
-                <div class="feature-card" data-delay="800">
-                    <div class="feature-icon">📱</div>
-                    <h3>Oyun İçi Telefon</h3>
-                    <p>SMS gönderme, arama yapma, GPS navigasyon, banka uygulaması ve sosyal medya. Gerçek hayattaki gibi akıllı telefon deneyimi.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Server Info Section -->
-    <section class="server-info" id="servers">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-tag">Sunucu</span>
-                <h2 class="section-title">Sunucu <span class="accent">Bilgileri</span></h2>
-                <p class="section-desc">Sunucumuza bağlanmak için gereken tüm bilgiler burada</p>
-            </div>
-            <div class="server-cards">
-                <div class="server-card main-card">
-                    <div class="card-glow"></div>
-                    <div class="status-indicator">
-                        <span class="status-dot online"></span>
-                        <span>ONLINE</span>
-                    </div>
-                    <h3>Türkiyem Mazi Gaming</h3>
-                    <p class="server-mode">MTA:SA Roleplay Sunucusu</p>
-                    <div class="server-ip">
-                        <span class="ip-label">Sunucu IP Adresi</span>
-                        <div class="ip-box">
-                            <code id="serverIp">212.134.162.197:22003</code>
-                            <button class="copy-btn" onclick="copyIP()" id="copyIpBtn" aria-label="IP Kopyala">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="server-details">
-                        <div class="detail-row">
-                            <span class="detail-label">Sunucu Tipi</span>
-                            <span class="detail-value">Roleplay (RP)</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Harita</span>
-                            <span class="detail-value">San Andreas</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Dil</span>
-                            <span class="detail-value">Türkçe 🇹🇷</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">Max Oyuncu</span>
-                            <span class="detail-value">200 Slot</span>
-                        </div>
-                    </div>
-                    <a href="mtasa://212.134.162.197:22003" class="btn btn-primary card-btn" id="connectBtn">
-                        <span class="btn-bg"></span>
-                        <span class="btn-content">⚡ Hızlı Bağlan</span>
-                    </a>
-                </div>
-                <div class="server-card">
-                    <div class="card-icon">👥</div>
-                    <h3>Topluluk</h3>
-                    <div class="card-stat">500+</div>
-                    <p>Aktif kayıtlı üye ile Türkiye'nin en hızlı büyüyen MTA topluluğu</p>
-                </div>
-                <div class="server-card">
-                    <div class="card-icon">🛠️</div>
-                    <h3>Destek Ekibi</h3>
-                    <div class="card-stat">7/24</div>
-                    <p>Deneyimli admin ve moderatör ekibimiz her an yardıma hazır</p>
-                </div>
-                <div class="server-card">
-                    <div class="card-icon">🔄</div>
-                    <h3>Güncellemeler</h3>
-                    <div class="card-stat">Haftalık</div>
-                    <p>Her hafta yeni içerik, script güncellemeleri ve optimizasyonlar</p>
-                </div>
-                <div class="server-card">
-                    <div class="card-icon">⚡</div>
-                    <h3>Performans</h3>
-                    <div class="card-stat">%99.9</div>
-                    <p>Yüksek performanslı sunucu altyapısı ile kesintisiz oyun deneyimi</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Rules Section -->
-    <section class="rules" id="rules">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-tag">Kurallar</span>
-                <h2 class="section-title">Sunucu <span class="accent">Kuralları</span></h2>
-                <p class="section-desc">Adil, eğlenceli ve profesyonel bir roleplay ortamı için aşağıdaki kurallara uymanız gerekmektedir</p>
-            </div>
-            <div class="rules-grid">
-                <div class="rule-item">
-                    <div class="rule-number">01</div>
-                    <div class="rule-content">
-                        <h4>Hile & Cheat Yasağı</h4>
-                        <p>Aimbot, wallhack, speedhack, health hack ve her türlü üçüncü parti hile programı kullanımı kalıcı ban ile sonuçlanır.</p>
-                    </div>
-                </div>
-                <div class="rule-item">
-                    <div class="rule-number">02</div>
-                    <div class="rule-content">
-                        <h4>Küfür & Hakaret</h4>
-                        <p>OOC (Out of Character) ve IC (In Character) fark etmeksizin küfür, hakaret, aşağılama ve ırkçılık kesinlikle yasaktır.</p>
-                    </div>
-                </div>
-                <div class="rule-item">
-                    <div class="rule-number">03</div>
-                    <div class="rule-content">
-                        <h4>Yetkililere Saygı</h4>
-                        <p>Admin ve moderatör kararlarına itiraz etmek, saygısızlık yapmak yasaktır. Şikâyetlerinizi Discord üzerinden iletebilirsiniz.</p>
-                    </div>
-                </div>
-                <div class="rule-item">
-                    <div class="rule-number">04</div>
-                    <div class="rule-content">
-                        <h4>Reklam Yasağı</h4>
-                        <p>Başka sunucu, Discord, YouTube veya herhangi bir platformun reklamını yapmak kalıcı ban ile sonuçlanır.</p>
-                    </div>
-                </div>
-                <div class="rule-item">
-                    <div class="rule-number">05</div>
-                    <div class="rule-content">
-                        <h4>Bug & Exploit Kullanımı</h4>
-                        <p>Oyun içi hata ve açıkları kötüye kullanmak yasaktır. Bulduğunuz bugları yetkililere bildirmeniz ödüllendirilir.</p>
-                    </div>
-                </div>
-                <div class="rule-item">
-                    <div class="rule-number">06</div>
-                    <div class="rule-content">
-                        <h4>Roleplay Kuralları</h4>
-                        <p>Powergaming (PG), metagaming (MG), revenge kill (RK) ve deathmatching (DM) gibi RP ihlalleri cezalandırılır.</p>
-                    </div>
-                </div>
-                <div class="rule-item">
-                    <div class="rule-number">07</div>
-                    <div class="rule-content">
-                        <h4>Karakter Kuralları</h4>
-                        <p>Uygunsuz, gerçek kişilere ait veya hakaret içeren karakter isimleri kullanmak yasaktır. İsimler gerçekçi olmalıdır.</p>
-                    </div>
-                </div>
-                <div class="rule-item">
-                    <div class="rule-number">08</div>
-                    <div class="rule-content">
-                        <h4>AFK & Botluk</h4>
-                        <p>Uzun süre AFK kalmak, bot kullanmak veya makro programları ile oyun oynamak yasaktır. AFK sistemini kötüye kullanmayın.</p>
-                    </div>
-                </div>
-                <div class="rule-item">
-                    <div class="rule-number">09</div>
-                    <div class="rule-content">
-                        <h4>Hesap Güvenliği</h4>
-                        <p>Hesap paylaşımı, hesap satışı ve başka birinin hesabına izinsiz erişim kesinlikle yasaktır.</p>
-                    </div>
-                </div>
-                <div class="rule-item">
-                    <div class="rule-number">10</div>
-                    <div class="rule-content">
-                        <h4>Genel Düzen</h4>
-                        <p>Sunucu düzenini bozacak her türlü davranış, spam, flood ve provokasyon cezalandırılır. Saygılı ve kurallara uygun oynayın.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="section-container">
-            <div class="cta-content">
-                <h2>Maceraya <span class="accent">Başla</span></h2>
-                <p>Türkiye'nin en kaliteli MTA Roleplay sunucusuna hemen katıl!</p>
-                <div class="cta-buttons">
-                    <a href="mtasa://212.134.162.197:22003" class="btn btn-primary btn-lg" id="ctaJoinBtn">
-                        <span class="btn-bg"></span>
-                        <span class="btn-content">🎮 Sunucuya Katıl</span>
-                    </a>
-                    <button class="btn btn-discord btn-lg" onclick="copyDiscord()" id="ctaDiscordBtn">
-                        💬 Discord'a Katıl
+            <h1 class="hero-title">
+                ANADOLU<br>
+                <span class="text-gradient">GAMING</span>
+            </h1>
+            <p class="hero-subtitle">
+                Eski adıyla <strong>Türkiyem Mazi Gaming</strong> kalitesi, şimdi yepyeni altyapısı ve yenilenen kimliğiyle <strong>Anadolu Gaming</strong> adıyla sizlerle! En yeni sistemler, kesintisiz FPS ve adil yönetim anlayışı.
+            </p>
+            
+            <!-- Connection Widget -->
+            <div class="connect-widget">
+                <div class="ip-container">
+                    <span class="ip-label"><i class="fa-solid fa-network-wired"></i> Sunucu IP</span>
+                    <span class="ip-address" id="ip-text">185.255.92.59</span>
+                    <button class="copy-btn" id="copy-ip-btn" title="IP Adresini Kopyala">
+                        <i class="fa-solid fa-copy"></i> Kopyala
                     </button>
+                </div>
+                <div class="hero-cta-buttons">
+                    <a href="mtasa://185.255.92.59:22003" class="btn btn-accent" id="direct-play-btn">
+                        <i class="fa-solid fa-play"></i> Doğrudan Giriş Yap
+                    </a>
+                    <a href="https://discord.gg/8ht8deUNQX" target="_blank" class="btn btn-discord" id="join-discord-btn">
+                        <i class="fa-brands fa-discord"></i> Discord'a Katıl
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <div class="gaming-card">
+                <img src="assets/background.png" alt="Anadolu Gaming Logo" class="hero-showcase-img">
+                <div class="card-overlay"></div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="section-header">
+            <h2>Neden Anadolu Gaming?</h2>
+            <p>Sıradan sunuculardan sıkılanlar için özel olarak tasarlanmış benzersiz özellikler.</p>
+        </div>
+        <div class="features-grid">
+            <!-- Feature 1 -->
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Yüksek FPS / Optimizasyon</h3>
+                <p>Gelişmiş optimizasyon teknikleri ve temiz kodlanmış scriptler sayesinde en kalabalık alanlarda bile akıcı oyun deneyimi.</p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Güvenli ve Adil Oyun</h3>
+                <p>Hile koruma sistemlerimiz ve tecrübeli yetkili kadromuz sayesinde herkes için eşit ve adil bir rekabet ortamı.</p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-gears"></i></div>
+                <h3>Özgün Sistemler</h3>
+                <p>Başka hiçbir yerde görmediğiniz özgün modifikasyonlar, gelişmiş klan sistemleri, meslekler ve harika etkinlikler.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Server Status Section -->
+    <section class="stats-section" id="stats">
+        <div class="stats-container">
+            <div class="section-header">
+                <h2>Sunucu Durumu</h2>
+                <p>Canlı sunucu verileri ve bağlantı bilgileri.</p>
+            </div>
+            <div class="stats-grid">
+                <!-- Stat Card 1 -->
+                <div class="stat-card">
+                    <span class="stat-title">Sunucu Durumu</span>
+                    <span class="stat-value text-green" id="server-status"><i class="fa-solid fa-circle-check"></i> AKTİF</span>
+                </div>
+                <!-- Stat Card 2 -->
+                <div class="stat-card">
+                    <span class="stat-title">Mevcut Oyuncu</span>
+                    <span class="stat-value" id="player-count">-- / --</span>
+                </div>
+                <!-- Stat Card 3 -->
+                <div class="stat-card">
+                    <span class="stat-title">Sunucu Gecikmesi (Ping)</span>
+                    <span class="stat-value text-gold" id="ping-rate">Hesaplanıyor...</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Discord & Footer Section -->
+    <section class="discord-section" id="discord">
+        <div class="discord-card">
+            <div class="discord-left">
+                <h2>Büyük Topluluğa Katıl!</h2>
+                <p>7/24 aktif ses kanalları, etkinlikler, anlık destek ve samimi ortam. Anadolu Gaming ailesi Discord'da seni bekliyor.</p>
+                <a href="https://discord.gg/8ht8deUNQX" target="_blank" class="btn btn-discord btn-large" id="footer-discord-btn">
+                    <i class="fa-brands fa-discord"></i> Hemen Discord'a Katıl
+                </a>
+            </div>
+            <div class="discord-right">
+                <div class="discord-widget-mock">
+                    <div class="widget-header">
+                        <i class="fa-brands fa-discord"></i>
+                        <span>Anadolu Gaming Discord</span>
+                    </div>
+                    <div class="widget-users">
+                        <div class="user-row"><span class="user-status online"></span> Kenan (Sunucu Sahibi)</div>
+                        <div class="user-row"><span class="user-status online"></span> Geliştirici Ekip</div>
+                        <div class="user-row"><span class="user-status online"></span> Yönetim Ekibi</div>
+                        <div class="user-row"><span class="user-status idle"></span> Topluluk Üyeleri (+150 Çevrimiçi)</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <img src="mazi.png" alt="Logo" class="footer-logo-img">
-                    <h3>Türkiyem <span class="accent">Mazi</span> Gaming</h3>
-                    <p>Türkiye'nin en kaliteli MTA Roleplay deneyimi. 2026'dan beri aktif.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Hızlı Linkler</h4>
-                    <a href="#hero">Ana Sayfa</a>
-                    <a href="#features">Özellikler</a>
-                    <a href="#servers">Sunucu</a>
-                    <a href="#rules">Kurallar</a>
-                </div>
-                <div class="footer-links">
-                    <h4>İndirmeler</h4>
-                    <a href="https://multitheftauto.com/" target="_blank">MTA İndir</a>
-                    <a href="https://dosya.co/6w45s1y2l3g6/Gta_san_andreas_-_500_MB.rar.html" target="_blank">GTA SA İndir</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 Türkiyem Mazi Gaming — Tüm Hakları Saklıdır.</p>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Anadolu Gaming. Tüm Hakları Saklıdır.</p>
+            <p class="muted-text">Eski adıyla Türkiyem Mazi Gaming. Bu site hayran yapımı bir oyun topluluğu sitesidir.</p>
         </div>
     </footer>
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <span class="toast-icon">✅</span>
-        <span class="toast-text" id="toastText">Kopyalandı!</span>
+    <!-- Notification system for Copy IP -->
+    <div class="notification-toast" id="copy-toast">
+        <i class="fa-solid fa-circle-check"></i> IP Adresi Panoya Kopyalandı!
     </div>
-    <script src="script.js"></script>
+    <!-- Custom JS -->
+    <script src="app.js"></script>
 </body>
 </html>
