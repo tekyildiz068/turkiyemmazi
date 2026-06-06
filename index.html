@@ -1,199 +1,224 @@
 <!DOCTYPE html>
-
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Türkiyem Mazi Gaming</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profesyonel web sitemizin ana sayfası. Hizmetlerimiz ve hakkımızda detaylı bilgi.">
+    <title>Profesyonel Web Sitesi</title>
+    
+    <!-- Google Fonts (Modern Yazı Tipi) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
+    <style>
+        /* Modern CSS Reset & Değişkenler */
+        :root {
+            --primary-color: #2563eb; /* Modern Mavi */
+            --text-color: #1f2937;    /* Koyu Gri (Siyah yerine okunurluğu artırır) */
+            --bg-light: #f9fafb;      /* Hafif Gri Arka Plan */
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
 
-body{
-    background:#0f172a;
-    color:white;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-header{
-    background:#111827;
-    padding:20px;
-    text-align:center;
-    border-bottom:3px solid #dc2626;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
 
-header h1{
-    color:#dc2626;
-    font-size:40px;
-}
+        /* Navigasyon Alanı (Header) */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-.hero{
-    text-align:center;
-    padding:50px 20px;
-}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.hero img{
-    width:450px;
-    max-width:90%;
-    margin-bottom:20px;
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
 
-.hero h2{
-    color:#dc2626;
-    font-size:50px;
-}
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-.hero p{
-    margin-top:10px;
-    font-size:20px;
-}
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
 
-.btn{
-    display:inline-block;
-    margin:10px;
-    padding:15px 35px;
-    background:#dc2626;
-    color:white;
-    text-decoration:none;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-}
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
 
-.btn:hover{
-    background:#991b1b;
-}
+        /* Hero (Giriş) Bölümü */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
 
-.servers{
-    padding:50px;
-    text-align:center;
-}
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
 
-.card{
-    display:inline-block;
-    width:320px;
-    min-height:220px;
-    vertical-align:top;
-    background:#1e293b;
-    margin:15px;
-    padding:25px;
-    border-radius:10px;
-}
+        .hero p {
+            font-size: 1.25rem;
+            color: #4b5563;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+        }
 
-.card h3{
-    color:#dc2626;
-    margin-bottom:10px;
-}
+        /* Profesyonel Butonlar */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+            transition: var(--transition);
+        }
 
-footer{
-    background:#111827;
-    text-align:center;
-    padding:20px;
-    margin-top:50px;
-}
-</style>
+        .btn:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+        }
 
+        /* Öne Çıkan Özellikler / Hizmetler */
+        .features {
+            background-color: var(--white);
+            padding: 5rem 2rem;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            padding: 2.5rem;
+            border-radius: 8px;
+            background-color: var(--bg-light);
+            border: 1px solid #e5e7eb;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer (Alt Bilgi) */
+        footer {
+            background-color: #111827;
+            color: #9ca3af;
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Mobil Uumluluk (Responsive) */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none; /* Basitlik adına mobilde gizlendi, hamburger menü eklenebilir */
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-    <h1>🇹🇷 Türkiyem Mazi Gaming</h1>
-</header>
+    <!-- Navigasyon -->
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo">ŞirketAdı</a>
+            <ul class="nav-links">
+                <li><a href="#anasayfa">Ana Sayfa</a></li>
+                <li><a href="#hizmetler">Hizmetler</a></li>
+                <li><a href="#hakkimizda">Hakkımızda</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section class="hero">
+    <!-- Ana Giriş (Hero Area) -->
+    <main>
+        <section class="hero" id="anasayfa">
+            <h1>Geleceğin Dijital Çözümlerini Bugünden İnşa Edin</h1>
+            <p>Modern tasarımlar, hızlı altyapılar ve kullanıcı odaklı deneyimlerle işinizi bir üst seviyeye taşıyoruz.</p>
+            <a href="#hizmetler" class="btn">Hemen Başlayın</a>
+        </section>
 
-```
-<img src="mazi.png" alt="Türkiyem Mazi Gaming">
+        <!-- Hizmetler / Özellikler Bölümü -->
+        <section class="features" id="hizmetler">
+            <div class="features-container">
+                <div class="feature-card">
+                    <h3>Modern Tasarım</h3>
+                    <p>Kullanıcı deneyimini (UX) ön planda tutan, göze hitap eden ve markanızı yansıtan arayüzler tasarlıyoruz.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Yüksek Performans</h3>
+                    <p>Hızlı yüklenen, SEO dostu ve temiz kodlanmış altyapılarla arama motorlarında üst sıralara çıkın.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Tam Mobil Uyum</h3>
+                    <p>Web siteniz telefon, tablet ve masaüstü tüm ekranlarda kusursuz bir şekilde çalışır.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<h2>Türkiyem Mazi Gaming'e Hoş Geldiniz</h2>
-
-<p>Türkiye'nin En Kaliteli MTA Roleplay Deneyimi</p>
-
-<a href="mtasa://212.134.162.197:22003" class="btn">
-    🎮 Sunucuya Katıl
-</a>
-
-<a href="https://multitheftauto.com/" target="_blank" class="btn">
-    📥 MTA İndir
-</a>
-
-<a href="https://dosya.co/6w45s1y2l3g6/Gta_san_andreas_-_500_MB.rar.html" target="_blank" class="btn">
-    🚗 GTA SA İndir
-</a>
-
-<button class="btn" onclick="copyDiscord()">
-    💬 Discord'a Katıl
-</button>
-```
-
-</section>
-
-<section class="servers">
-
-```
-<h2>📊 Sunucu Bilgileri</h2>
-
-<div class="card">
-    <h3>🟢 Sunucu Durumu</h3>
-    <p><b>ONLINE</b></p>
-    <br>
-    <p>IP:</p>
-    <p>212.134.162.197:22003</p>
-</div>
-
-<div class="card">
-    <h3>👥 Toplam Üye</h3>
-    <p>500+</p>
-    <br>
-    <p>Topluluğumuz her geçen gün büyüyor.</p>
-</div>
-
-<div class="card">
-    <h3>🎮 Aktif Oyuncular</h3>
-    <p>Sunucuya Katılarak Oyuncuları Görebilirsiniz.</p>
-</div>
-
-<div class="card">
-    <h3>📜 Sunucu Kuralları</h3>
-    <p>
-    • Hile kullanmak yasaktır.<br><br>
-    • Küfür ve hakaret yasaktır.<br><br>
-    • Yetkililere saygısızlık yasaktır.<br><br>
-    • Reklam yapmak yasaktır.<br><br>
-    • Bug kullanımı yasaktır.<br><br>
-    • RP kurallarına uyulmalıdır.
-    </p>
-</div>
-
-<div class="card">
-    <h3>💬 Discord Topluluğu</h3>
-    <p>Discord sunucumuza katılarak duyuruları takip edebilirsiniz.</p>
-</div>
-
-<div class="card">
-    <h3>🛠️ Destek Sistemi</h3>
-    <p>Yetkili ekibimiz sizlere yardımcı olmaktadır.</p>
-</div>
-```
-
-</section>
-
-<footer>
-    © 2026 Türkiyem Mazi Gaming - Tüm Hakları Saklıdır.
-</footer>
-
-<script>
-function copyDiscord(){
-    navigator.clipboard.writeText("DISCORD_LİNKİNİ_BURAYA_YAZ");
-    alert("Discord linki kopyalandı!");
-}
-</script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 ŞirketAdı. Tüm Hakları Saklıdır.</p>
+    </footer>
 
 </body>
 </html>
