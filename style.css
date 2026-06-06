@@ -88,6 +88,58 @@ body {
     50% { transform: translate(-30px, 40px) scale(0.95); }
     75% { transform: translate(50px, 20px) scale(1.05); }
 }
+/* Logo Watermark Background */
+.bg-logo-watermark {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+.watermark-img {
+    position: absolute;
+    opacity: 0.04;
+    filter: blur(2px) saturate(0.5);
+    pointer-events: none;
+    user-select: none;
+}
+.watermark-1 {
+    width: 800px;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, 0) rotate(-3deg);
+    opacity: 0.06;
+    filter: blur(1px);
+    animation: watermarkFloat1 25s ease-in-out infinite;
+}
+.watermark-2 {
+    width: 500px;
+    bottom: 10%;
+    left: -5%;
+    transform: rotate(8deg);
+    opacity: 0.025;
+    filter: blur(3px);
+    animation: watermarkFloat2 30s ease-in-out infinite;
+}
+.watermark-3 {
+    width: 450px;
+    top: 40%;
+    right: -8%;
+    transform: rotate(-12deg);
+    opacity: 0.025;
+    filter: blur(4px);
+    animation: watermarkFloat3 35s ease-in-out infinite;
+}
+@keyframes watermarkFloat1 {
+    0%, 100% { transform: translate(-50%, 0) rotate(-3deg) scale(1); }
+    50% { transform: translate(-50%, 30px) rotate(0deg) scale(1.03); }
+}
+@keyframes watermarkFloat2 {
+    0%, 100% { transform: rotate(8deg) translate(0, 0); }
+    50% { transform: rotate(5deg) translate(20px, -30px); }
+}
+@keyframes watermarkFloat3 {
+    0%, 100% { transform: rotate(-12deg) translate(0, 0); }
+    50% { transform: rotate(-8deg) translate(-20px, 25px); }
+}
 /* ========== NAVIGATION ========== */
 nav {
     position: fixed;
@@ -276,20 +328,24 @@ nav.scrolled {
 }
 /* Hero Logo */
 .hero-logo {
-    margin-bottom: 32px;
-    animation: fadeInUp 0.8s ease-out;
+    margin-bottom: 24px;
+    animation: fadeInUp 0.8s ease-out, logoGlow 4s ease-in-out infinite;
 }
 .hero-logo-img {
-    width: 220px;
-    max-width: 60%;
+    width: 340px;
+    max-width: 80%;
     height: auto;
-    border-radius: 16px;
-    filter: drop-shadow(0 10px 40px rgba(239, 68, 68, 0.3));
+    border-radius: 20px;
+    filter: drop-shadow(0 10px 50px rgba(239, 68, 68, 0.35));
     transition: transform 0.4s, filter 0.4s;
 }
 .hero-logo-img:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 15px 50px rgba(239, 68, 68, 0.5));
+    transform: scale(1.06) rotate(-1deg);
+    filter: drop-shadow(0 20px 60px rgba(239, 68, 68, 0.55));
+}
+@keyframes logoGlow {
+    0%, 100% { filter: drop-shadow(0 10px 50px rgba(239, 68, 68, 0.35)); }
+    50% { filter: drop-shadow(0 15px 60px rgba(239, 68, 68, 0.5)); }
 }
 .hero-badge {
     display: inline-flex;
