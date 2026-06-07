@@ -1,189 +1,203 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anadolu Gaming | MTA:SA Rol Yapma Sunucusu</title>
-    <meta name="description" content="Anadolu Gaming Multi Theft Auto (MTA:SA) sunucusu resmi web sitesi. Eğlenceli sistemler, yüksek FPS kalitesi ve kesintisiz topluluk deneyimi için aramıza katılın.">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Background overlay elements -->
-    <div class="bg-glow-orange"></div>
-    <div class="bg-glow-red"></div>
-    <!-- Navigation Bar -->
-    <header class="navbar-container">
-        <div class="navbar-wrapper">
-            <a href="#" class="logo-link" id="nav-logo">
-                <span class="logo-accent">ANADOLU</span> GAMING
-            </a>
-            <nav class="nav-links">
-                <a href="#hero" class="nav-item active"><i class="fa-solid fa-house"></i> Anasayfa</a>
-                <a href="#about" class="nav-item"><i class="fa-solid fa-circle-info"></i> Hakkımızda</a>
-                <a href="#stats" class="nav-item"><i class="fa-solid fa-server"></i> Sunucu Durumu</a>
-                <a href="#discord" class="nav-item"><i class="fa-solid fa-comments"></i> Topluluk</a>
-            </nav>
-            <div class="nav-actions">
-                <button class="btn btn-primary btn-join" id="nav-btn-join">
-                    <i class="fa-solid fa-gamepad"></i> Hemen Oyna
-                </button>
-            </div>
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Menüyü Aç">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </div>
-    </header>
-    <!-- Mobile Navigation Menu -->
-    <div class="mobile-nav" id="mobile-nav">
-        <a href="#hero" class="mobile-nav-item"><i class="fa-solid fa-house"></i> Anasayfa</a>
-        <a href="#about" class="mobile-nav-item"><i class="fa-solid fa-circle-info"></i> Hakkımızda</a>
-        <a href="#stats" class="mobile-nav-item"><i class="fa-solid fa-server"></i> Sunucu Durumu</a>
-        <a href="#discord" class="mobile-nav-item"><i class="fa-solid fa-comments"></i> Topluluk</a>
-        <button class="btn btn-primary w-full mt-4" id="mobile-btn-join">
-            <i class="fa-solid fa-gamepad"></i> Hemen Oyna
-        </button>
-    </div>
-    <!-- Hero Section -->
-    <section class="hero-section" id="hero">
-        <div class="hero-content">
-            <div class="tagline-badge">
-                <span class="pulsing-dot"></span> Yeni Dönem Başladı
-            </div>
-            <h1 class="hero-title">
-                ANADOLU<br>
-                <span class="text-gradient">GAMING</span>
-            </h1>
-            <p class="hero-subtitle">
-                Eski adıyla <strong>Türkiyem Mazi Gaming</strong> kalitesi, şimdi yepyeni altyapısı ve yenilenen kimliğiyle <strong>Anadolu Gaming</strong> adıyla sizlerle! En yeni sistemler, kesintisiz FPS ve adil yönetim anlayışı.
-            </p>
-            
-            <!-- Connection Widget -->
-            <div class="connect-widget">
-                <div class="ip-container">
-                    <span class="ip-label"><i class="fa-solid fa-network-wired"></i> Sunucu IP</span>
-                    <span class="ip-address" id="ip-text">185.255.92.59</span>
-                    <button class="copy-btn" id="copy-ip-btn" title="IP Adresini Kopyala">
-                        <i class="fa-solid fa-copy"></i> Kopyala
-                    </button>
-                </div>
-                <div class="hero-cta-buttons">
-                    <a href="mtasa://185.255.92.59:22003" class="btn btn-accent" id="direct-play-btn">
-                        <i class="fa-solid fa-play"></i> Doğrudan Giriş Yap
-                    </a>
-                    <a href="https://discord.gg/8ht8deUNQX" target="_blank" class="btn btn-discord" id="join-discord-btn">
-                        <i class="fa-brands fa-discord"></i> Discord'a Katıl
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="hero-image-wrapper">
-            <div class="gaming-card">
-                <img src="assets/background.png" alt="Anadolu Gaming Logo" class="hero-showcase-img">
-                <div class="card-overlay"></div>
-            </div>
-        </div>
-    </section>
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="section-header">
-            <h2>Neden Anadolu Gaming?</h2>
-            <p>Sıradan sunuculardan sıkılanlar için özel olarak tasarlanmış benzersiz özellikler.</p>
-        </div>
-        <div class="features-grid">
-            <!-- Feature 1 -->
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
-                <h3>Yüksek FPS / Optimizasyon</h3>
-                <p>Gelişmiş optimizasyon teknikleri ve temiz kodlanmış scriptler sayesinde en kalabalık alanlarda bile akıcı oyun deneyimi.</p>
-            </div>
-            <!-- Feature 2 -->
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3>Güvenli ve Adil Oyun</h3>
-                <p>Hile koruma sistemlerimiz ve tecrübeli yetkili kadromuz sayesinde herkes için eşit ve adil bir rekabet ortamı.</p>
-            </div>
-            <!-- Feature 3 -->
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fa-solid fa-gears"></i></div>
-                <h3>Özgün Sistemler</h3>
-                <p>Başka hiçbir yerde görmediğiniz özgün modifikasyonlar, gelişmiş klan sistemleri, meslekler ve harika etkinlikler.</p>
-            </div>
-        </div>
-    </section>
-    <!-- Server Status Section -->
-    <section class="stats-section" id="stats">
-        <div class="stats-container">
-            <div class="section-header">
-                <h2>Sunucu Durumu</h2>
-                <p>Canlı sunucu verileri ve bağlantı bilgileri.</p>
-            </div>
-            <div class="stats-grid">
-                <!-- Stat Card 1 -->
-                <div class="stat-card">
-                    <span class="stat-title">Sunucu Durumu</span>
-                    <span class="stat-value text-green" id="server-status"><i class="fa-solid fa-circle-check"></i> AKTİF</span>
-                </div>
-                <!-- Stat Card 2 -->
-                <div class="stat-card">
-                    <span class="stat-title">Mevcut Oyuncu</span>
-                    <span class="stat-value" id="player-count">-- / --</span>
-                </div>
-                <!-- Stat Card 3 -->
-                <div class="stat-card">
-                    <span class="stat-title">Sunucu Gecikmesi (Ping)</span>
-                    <span class="stat-value text-gold" id="ping-rate">Hesaplanıyor...</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Discord & Footer Section -->
-    <section class="discord-section" id="discord">
-        <div class="discord-card">
-            <div class="discord-left">
-                <h2>Büyük Topluluğa Katıl!</h2>
-                <p>7/24 aktif ses kanalları, etkinlikler, anlık destek ve samimi ortam. Anadolu Gaming ailesi Discord'da seni bekliyor.</p>
-                <a href="https://discord.gg/8ht8deUNQX" target="_blank" class="btn btn-discord btn-large" id="footer-discord-btn">
-                    <i class="fa-brands fa-discord"></i> Hemen Discord'a Katıl
-                </a>
-            </div>
-            <div class="discord-right">
-                <div class="discord-widget-mock">
-                    <div class="widget-header">
-                        <i class="fa-brands fa-discord"></i>
-                        <span>Anadolu Gaming Discord</span>
-                    </div>
-                    <div class="widget-users">
-                        <div class="user-row"><span class="user-status online"></span> Kenan (Sunucu Sahibi)</div>
-                        <div class="user-row"><span class="user-status online"></span> Geliştirici Ekip</div>
-                        <div class="user-row"><span class="user-status online"></span> Yönetim Ekibi</div>
-                        <div class="user-row"><span class="user-status idle"></span> Topluluk Üyeleri (+150 Çevrimiçi)</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Footer -->
-    <footer>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Anadolu Gaming. Tüm Hakları Saklıdır.</p>
-            <p class="muted-text">Eski adıyla Türkiyem Mazi Gaming. Bu site hayran yapımı bir oyun topluluğu sitesidir.</p>
-        </div>
-    </footer>
-    <!-- Notification system for Copy IP -->
-    <div class="notification-toast" id="copy-toast">
-        <i class="fa-solid fa-circle-check"></i> IP Adresi Panoya Kopyalandı!
-    </div>
-    <!-- Custom JS -->
-    <script src="app.js"></script>
-</body>
-</html>
+// ========== PARTICLE BACKGROUND ==========
+const canvas = document.getElementById('particleCanvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let mouse = { x: null, y: null };
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+});
+class Particle {
+    constructor() {
+        this.reset();
+    }
+    reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.speedY = (Math.random() - 0.5) * 0.5;
+        this.opacity = Math.random() * 0.5 + 0.1;
+        this.color = Math.random() > 0.7 ? '#ef4444' : '#94a3b8';
+    }
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        // Mouse interaction
+        if (mouse.x !== null) {
+            const dx = mouse.x - this.x;
+            const dy = mouse.y - this.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 120) {
+                const force = (120 - dist) / 120;
+                this.x -= dx * force * 0.01;
+                this.y -= dy * force * 0.01;
+            }
+        }
+        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+            this.reset();
+        }
+    }
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = this.opacity;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+    }
+}
+function initParticles() {
+    const count = Math.min(80, Math.floor(window.innerWidth / 15));
+    particles = [];
+    for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+    }
+}
+function connectParticles() {
+    for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 150) {
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.strokeStyle = `rgba(239, 68, 68, ${0.06 * (1 - dist / 150)})`;
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
+            }
+        }
+    }
+}
+function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+        p.update();
+        p.draw();
+    });
+    connectParticles();
+    requestAnimationFrame(animateParticles);
+}
+initParticles();
+animateParticles();
+// ========== NAVBAR SCROLL ==========
+const navbar = document.getElementById('navbar');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+    lastScroll = currentScroll;
+});
+// ========== MOBILE MENU ==========
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+function closeMobile() {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+}
+// ========== SCROLL ANIMATIONS ==========
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const delay = entry.target.dataset.delay || 0;
+            setTimeout(() => {
+                entry.target.classList.add('visible');
+            }, delay);
+        }
+    });
+}, observerOptions);
+document.querySelectorAll('.feature-card, .server-card, .rule-item').forEach(el => {
+    observer.observe(el);
+});
+// ========== COUNTER ANIMATION ==========
+function animateCounters() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    statNumbers.forEach(num => {
+        const target = parseInt(num.dataset.count);
+        const duration = 2000;
+        const startTime = performance.now();
+        function updateCount(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease out cubic
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(target * easeOut);
+            num.textContent = current;
+            if (progress < 1) {
+                requestAnimationFrame(updateCount);
+            }
+        }
+        requestAnimationFrame(updateCount);
+    });
+}
+// Start counters when hero is visible
+const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounters();
+            heroObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.3 });
+const heroStats = document.querySelector('.hero-stats');
+if (heroStats) {
+    heroObserver.observe(heroStats);
+}
+// ========== TOAST NOTIFICATION ==========
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    const toastText = document.getElementById('toastText');
+    toastText.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+}
+// ========== COPY FUNCTIONS ==========
+function copyDiscord() {
+    navigator.clipboard.writeText("DISCORD_LİNKİNİ_BURAYA_YAZ").then(() => {
+        showToast("Discord linki kopyalandı!");
+    }).catch(() => {
+        showToast("Kopyalama başarısız oldu.");
+    });
+}
+function copyIP() {
+    const ip = document.getElementById('serverIp').textContent;
+    navigator.clipboard.writeText(ip).then(() => {
+        showToast("Sunucu IP adresi kopyalandı!");
+    }).catch(() => {
+        showToast("Kopyalama başarısız oldu.");
+    });
+}
+// ========== SMOOTH SCROLL FOR NAV LINKS ==========
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
